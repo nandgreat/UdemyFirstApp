@@ -1,11 +1,21 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native'
+import { View, Text, StyleSheet, TouchableNativeFeedback } from 'react-native'
 
 const GoalItem = props => {
+
+    // Examples of Touchables
+    /**
+     * <TouchableNativeFeedback> for android
+     * <TouchableOpacity> 
+     * <TouchableWithoutFeedback>
+     */
+
     return (
-        <View style={styles.listItem}>
+        <TouchableNativeFeedback  onPress={props.onDelete}>
+            <View style={styles.listItem} >
             <Text >{props.title}</Text>
         </View>
+        </TouchableNativeFeedback>
     )
 }
 
@@ -13,9 +23,10 @@ const styles = StyleSheet.create({
     listItem: {
         padding: 10,
         marginVertical: 5,
-        borderBottomColor: 'black',
-        borderBottomWidth: 1
-      }
+        backgroundColor: '#dddddd',
+        borderColor: '#dddddd',
+        borderWidth: 1
+    }
 })
 
 export default GoalItem
