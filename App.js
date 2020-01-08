@@ -10,7 +10,7 @@ export default function App() {
 
   const addGoalHandler = goalTitle => {
     setCourseGoals(currentGoals => [
-      ...currentGoals,
+      ...currentGoals, 
       { id: Math.random().toString(), value: goalTitle }
     ])
   }
